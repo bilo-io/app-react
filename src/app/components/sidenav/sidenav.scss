@@ -1,0 +1,36 @@
+@import '../../../app.scss';
+.sidenav {
+    position: relative;
+    background: lighten($col-background, 2%);
+    color: $col-text;
+    width: $dim-sidebar;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: -$dim-sidebar;
+}
+
+.open {
+    @extend .sidenav;
+    transform: translateX($dim-sidebar);
+    transition: 1s ease-in-out;
+}
+
+$padding: 1em;
+.sidenav-link {
+    // position: absolute;
+    display: inline-block;
+    width:calc(100% - 2 * #{$padding});
+    line-height: 1em;
+    height: 1em;
+    color: $col-text;
+    padding: $padding;
+    text-decoration: none;
+    &:hover {
+        color: $col-active;
+        background: lighten($col-background, 5%);
+        border-left: 4px solid $col-active;
+        width:calc(100% - 2 * #{$padding});
+        padding-left: calc(#{$padding} - 4px);
+    }
+}
