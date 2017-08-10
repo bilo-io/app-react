@@ -6,7 +6,7 @@ require('./sidenav.scss');
 export default class Sidenav extends React.Component {
     render() {
         return !this.props.isOpen ? null : (
-            <div className={`sidenav` + this.props.isOpen ? ' open' : ''}>
+            <div className={'sidenav ' + this.props.isOpen ? 'open' : ''}>
                 {this.props.children}
             </div>
         )

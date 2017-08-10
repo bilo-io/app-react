@@ -3,17 +3,19 @@
     position: relative;
     background: lighten($col-background, 2%);
     color: $col-text;
-    width: $dim-sidebar;
+    width: 0;
     height: 100%;
     z-index: 10;
     top: 0;
-    left: -$dim-sidebar;
+    left: 0;
+    transition: width 1s;
+    // -webkit-transition: width 1s;
 }
 
 .open {
-    @extend .sidenav;
-    transform: translateX($dim-sidebar);
-    transition: 1s ease-in-out;
+    width: $dim-sidebar;
+    background: lighten($col-background, 2%);
+    color: $col-text;
 }
 
 $padding: 1em;
@@ -29,8 +31,8 @@ $padding: 1em;
     &:hover {
         color: $col-active;
         background: lighten($col-background, 5%);
-        border-left: 4px solid $col-active;
+        border-left: 3px solid $col-active;
         width:calc(100% - 2 * #{$padding});
-        padding-left: calc(#{$padding} - 4px);
+        padding-left: calc(#{$padding} - 3px);
     }
 }
