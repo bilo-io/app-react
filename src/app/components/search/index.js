@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Search extends React.Component {
+class Search extends React.Component {
     componentWillMount() {
         this.setState({
             searchTerm: ''
@@ -19,3 +19,5 @@ export default class Search extends React.Component {
         )
     }
 }
+
+export default Search;

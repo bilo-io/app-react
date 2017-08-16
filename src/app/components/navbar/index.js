@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 require('./navbar.scss');
 
-export default class Navbar extends React.Component {
+export class Navbar extends React.Component {
         render() {
         return (
             <div className='navbar'>
@@ -11,3 +11,5 @@ export default class Navbar extends React.Component {
         )
     }
 }
+
+export default Navbar;

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-// import Search from '../../components';
-// import List from '../../components';
+import Search from '../../components/search';
+import List from '../../components/list';
 
 require('./style.scss');
 
@@ -30,20 +30,21 @@ export default class Home extends React.Component {
         return this.state ? (
             <div className='page'>
                 <h1>Home</h1>
-                {/* <Search search={this.searchGoogle} /> */}
-                {/* <List> */}
+                <Search search={this.searchGoogle} />
+                <List>
                 {
                     (this.state.results || []).map((result, idx) => {
                         result.address_components = [];
                         return <li key={idx} onClick={(e) => {
                             this.setState(Object.assign({}, this.state, {
                                 googleResult: result,
-                                response: undefined
+                                response: undefined,
+                                results: undefined
                             }))
                         }}>{result.formatted_address}</li>
                     })
                         }
-                {/* </List> */}
+                </List>
             </div>
         ) : null;
     }
