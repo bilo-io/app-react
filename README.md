@@ -25,6 +25,12 @@ There is quite a consistent folder and file structure you can use:
 
 #### Global Files
 
-
+- `app/store.js`
+- `app/root-reducer.js`
 
 #### Local Files
+- `app/pages/home/`
+    - `action-types.js`
+    - `actions.js`
+    - `container.js`
+    - `reducer.js`

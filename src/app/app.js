@@ -6,7 +6,7 @@ import Sidenav from './components/sidenav';
 // Pages
 import About from './pages/about';
 import Demo from './pages/demo';
-import Home from './pages/home';
+import { Home } from './pages/home';
 import NotFound from './pages/not-found';
 
 require('../app.scss');
@@ -50,11 +50,11 @@ export default class App extends React.Component {
                             .toggleSidenav
                             .bind(this)}
                             width='48'/>
-                        <Link to="/home">React App</Link>
+                        {/* <Link to="/home">React App</Link> */}
                     </Navbar>
 
                     <div className='app-content'>
-                        <Sidenav isOpen={this.state.sidenavOpen}>
+                        <Sidenav isOpen={this.props.sidenavOpen}>
                             {this.state.sidenavItems.map((item) => {
                                 return <Link
                                         key={item.link}
