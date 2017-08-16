@@ -4,6 +4,7 @@ import {Route, Switch, Link} from 'react-router-dom';
 import Navbar from './components/navbar';
 import Sidenav from './components/sidenav';
 // Pages
+import About from './pages/about';
 import Demo from './pages/demo';
 import Home from './pages/home';
 import NotFound from './pages/not-found';
@@ -49,7 +50,7 @@ export default class App extends React.Component {
                             .toggleSidenav
                             .bind(this)}
                             width='48'/>
-                        <label>React App</label>
+                        <Link to="/home">React App</Link>
                     </Navbar>
 
                     <div className='app-content'>
@@ -63,7 +64,8 @@ export default class App extends React.Component {
                                 })}
                         </Sidenav>
                         <Switch>
-                            <Route exact path="/" component={Home}/>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/about" component={About}/>
                             <Route exact path="/home" component={Home}/>
                             <Route exact path="/demo" component={Demo}/>
                             <Route path="*" component={NotFound}/>

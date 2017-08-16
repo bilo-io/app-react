@@ -1,2 +1,4 @@
 export * from './navbar';
-export * from './sidenav';
+export { Sidenav } from './sidenav';
+export * from './map';
+export { Search } from './search/';

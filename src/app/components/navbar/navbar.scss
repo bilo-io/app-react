@@ -33,9 +33,10 @@ $height: calc(#{$dim-navbar-height} - 2 * #{$padding});
         cursor: pointer;
     }
 
-    label {
+    a {
         color: $col-active;
         height: $height;
+        text-decoration: none;
     }
     $link-padding: 6rem;
     .links {
