@@ -7,10 +7,10 @@ const TodoItem = ({ onClick, completed, text }) => (
     </li>
 )
 
-TodoItem.PropTypes = {
-    onClick: PropTypes.func.isRequired,
-    completed: PropTypes.func.isRequired,
-    text: PropTypes.func.isRequired
-}
+// TodoItem.PropTypes = {
+//     onClick: PropTypes.func.isRequired,
+//     completed: PropTypes.func.isRequired,
+//     text: PropTypes.func.isRequired
+// }
 
 export default TodoItem;

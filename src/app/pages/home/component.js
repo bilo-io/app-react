@@ -15,7 +15,7 @@ export default class Home extends React.Component {
     }
     render() {
         return !this.state 
-                ? null 
+                ? null
                 : (
                 <div className='page'>
                     <h1>Home</h1>

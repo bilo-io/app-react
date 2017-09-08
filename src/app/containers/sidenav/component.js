@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-require('./sidenav.scss');
+require('./style.scss');
 
 export class Sidenav extends React.Component {
     render() {

@@ -1,4 +1,4 @@
-export const TOGGLE_SIDENAV = 'TOGGLE_SIDENAV'
+export const TOGGLE_SIDENAV = 'TOGGLE_SIDENAV';
 
 export const toggleSidenav = (isOpen) => {
     return {
