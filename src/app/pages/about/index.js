@@ -1,16 +1,19 @@
-import React from 'react';
-require('./style.scss');
+import { connect } from 'react-redux';
+import About from './component';
+import {
+} from './actions';
 
-export default class About extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount() {}
-    render() {
-        return (
-            <div className='page'>
-                <h1>About</h1>
-            </div>
-        )
+const mapStateToProps = (state) => {
+    return {
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(About);

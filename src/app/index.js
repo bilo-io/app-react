@@ -1,8 +1,10 @@
 import React from 'react';
+import store from './store';
 import { Route, Switch, Link } from 'react-router-dom';
 // Components
 import Navbar from './components/navbar';
 import Sidenav from './components/sidenav';
+import { toggleSidenav } from './components/sidenav/actions'
 // Pages
 import About from './pages/about';
 import Demo from './pages/demo';
@@ -22,8 +24,11 @@ export default class App extends React.Component {
             sidenavOpen: false,
             sidenavItems: [
                 {
-                    link: '/home',
+                    link: '/about',
                     text: 'About'
+                }, {
+                    link: '/home',
+                    text: 'Home'
                 }, {
                     link: '/demo',
                     text: 'Demo'
@@ -34,6 +39,9 @@ export default class App extends React.Component {
             ]
         });
     }
+    componentDidMount() {
+        
+    }
     toggleSidenav() {
         this.setState({
             ...this.state,
@@ -41,6 +49,8 @@ export default class App extends React.Component {
         }, () => console.log(this.state));
     }
     render() {
+        let dispatch = store.dispatch;
+
         return this.state
             ? (
                 <div>
@@ -48,7 +58,7 @@ export default class App extends React.Component {
                         {/* onClick={this.toggleSidenav.bind(this)} */}
                         <img
                             src='https://raw.githubusercontent.com/bilo-io/resources/master/logo/react.png'
-                            onClick={this.toggleSidenav.bind(this)} 
+                            onClick={ () => {store.dispatch(toggleSidenav)}} 
                             width='48' />
                         <Link to="/home">React App</Link>
                     </Navbar>

@@ -1,16 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router';
-// import { Button } from 'bilo-xui';
-require('./sidenav.scss');
+import { connect } from 'react-redux';
+import Sidenav from './component';
+import {
+} from './actions';
 
-export class Sidenav extends React.Component {
-    render() {
-        return !this.props.isOpen ? null : (
-            <div className={'sidenav ' + this.props.isOpen ? 'open' : ''}>
-                {this.props.children}
-            </div>
-        )
+const mapStateToProps = (state) => {
+    return {
+        isOpen: state.isOpen
     }
 }
 
-export default Sidenav;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleSidenav: () => dispatch(toggleSidenav())
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Sidenav);
