@@ -1,13 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-// import Search from '../../components/search';
-// import List from '../../components/list';
-
+import Search from '../../components/search';
+import List from '../../components/list';
 require('./style.scss');
-
-// const Search = (props) => {     return (<input         type="text"
-// placeholder="Search ..."         defaultValue={props.searchTerm}
-// onChange={(e) => {         props.search(e.target.value);     }}/>) }
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -16,13 +11,15 @@ export default class Home extends React.Component {
         this.searchGoogle = this.searchGoogle.bind(this);
     }
     componentWillMount() {
-        // this.setState({});
+        this.setState({});
     }
     render() {
-        return (
+        return !this.state 
+                ? null 
+                : (
                 <div className='page'>
                     <h1>Home</h1>
-                    {/* <Search search={this.searchGoogle}/>
+                    <Search search={this.searchGoogle}/>
                     <List>
                         {(this.state.results || []).map((result, idx) => {
                             result.address_components = [];
@@ -36,10 +33,9 @@ export default class Home extends React.Component {
                                 }))
                             }}>{result.formatted_address}</li>
                         })}
-                    </List> */}
+                    </List>
                 </div>
             )
-            
     }
     searchGoogle(query) {
         if (query.length == 0) {

@@ -1,6 +1,7 @@
-import {UPDATE_QUERY, SEARCH_RESULTS, SEARCH_SUCCESS, SEARCH_ERROR} from './action-types';
+import {UPDATE_QUERY, SEARCH_RESULTS, SEARCH_SUCCESS, SEARCH_ERROR} from './actions';
 
 const initialState = {
+    pageTitle: 'Home',
     loading: false,
     results: [],
     query: undefined,

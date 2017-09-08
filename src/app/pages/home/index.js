@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import component from './component';
+import Home from './component';
 import {
     updateQuery,
     searchResults,
@@ -22,9 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const Home = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(component);
-
-export default Home;
+)(Home);

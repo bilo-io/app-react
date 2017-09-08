@@ -1,4 +1,3 @@
-
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,13 +5,13 @@ var DIST = path.resolve(__dirname, 'dist/');
 var SRC = path.resolve(__dirname, 'src/');
 
 var config = {
-    devtool: 'source-map',
     entry: SRC + '/index.js',
     output: {
         path: DIST,
         publicPath: '/',
         filename: 'app.js'
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Demo from './component';
+import Todo from './component';
 import {
 } from './actions';
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Demo);
+)(Todo);
