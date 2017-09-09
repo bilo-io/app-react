@@ -13,7 +13,7 @@ const initialState = {
 
 const demoReducer = (state = initialState, { type, ...action }) => {
     switch (type) {
-        case UPDATE_TEXT: 
+        case UPDATE_TEXT:
             return {
                 ...state,
                 text: action.text
@@ -25,7 +25,8 @@ const demoReducer = (state = initialState, { type, ...action }) => {
                 text: ''
             }
         default: return state;
-    }
+    }    
+    
 }
 
 export default demoReducer;
