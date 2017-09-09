@@ -4,13 +4,13 @@ import {
     toggleSidenav
 } from './actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         isOpen: state.isOpen
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         toggleSidenav: () => dispatch(toggleSidenav())
     }

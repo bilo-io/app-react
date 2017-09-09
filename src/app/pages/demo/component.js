@@ -5,10 +5,10 @@ export const Demo = (props) => {
     return (
         <div className='page'>
             <h1>Demo</h1>
-            <label>{props.text}</label>
+            <label>Text: {props.text}</label>
             <input
                 onChange={(e) => { props.updateText(e.target.value) }} />
-            <button onClick={() => props.saveText(props.text)}>Save</button>
+            <button onClick={() => props.saveText(props.state.text)}>Save</button>
             {(props.items || []).map((item) => {
                 <span>{item}</span>
             })}

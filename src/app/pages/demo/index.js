@@ -5,14 +5,14 @@ import {
     saveText
 } from './actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         text: state.text,
         items: state.items
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         updateText: (val) => dispatch(updateText(val)),
         saveText: (val) => dispatch(saveText(val))

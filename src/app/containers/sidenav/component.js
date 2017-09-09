@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 require('./style.scss');
 
-export class Sidenav extends React.Component {
-    render() {
-        return !this.props.isOpen ? null : (
-            <div className={'sidenav ' + this.props.isOpen ? 'open' : ''}>
-                {this.props.children}
-            </div>
-        )
-    }
+export const Sidenav = (props, isOpen) => {
+
+    return (
+        <div
+            className={'sidenav ' + isOpen
+            ? 'open'
+            : ''}>
+            {props.children}
+        </div>
+    )
 }
 
 export default Sidenav;

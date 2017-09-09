@@ -1,4 +1,4 @@
-import TOGGLE_SIDENAV from './actions';
+import SIDENAV_TOGGLE from './actions';
 
 const initialState = {
     isOpen: false
@@ -6,12 +6,12 @@ const initialState = {
 
 const sidenavReducer = (state = initialState, { type, ...action }) => {
     switch (type) {
-        case TOGGLE_SIDENAV:
+        case SIDENAV_TOGGLE:
             return {
                 ...state,
-                stopId: action.stopId
+               isOpen: action.isOpen
             }
-        default: return state
+        default: return state;
     }
 }
 

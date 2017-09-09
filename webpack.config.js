@@ -11,7 +11,7 @@ var config = {
         publicPath: '/',
         filename: 'app.js'
     },
-    devtool: 'source-map',
+    devtool: 'source-maps',
     module: {
         rules: [
             {
