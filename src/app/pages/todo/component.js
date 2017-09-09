@@ -9,7 +9,7 @@ export const Todo = (dispatch) => {
         <div className='page'>
             <h1>Todo</h1>
             <AddTodo />
-            <VisibleTodoList />
+            {/* <VisibleTodoList /> */}
         </div>
     )
 }

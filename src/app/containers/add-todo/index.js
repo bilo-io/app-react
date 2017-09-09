@@ -2,7 +2,7 @@ import React from 'react'
 import { connect, dispatch } from 'react-redux'
 import { addTodo } from '../../pages/todo/actions'
 
-let AddTodo = ({ dispatch }) => {
+let AddTodo = (props) => {
     let input
 
     return (
