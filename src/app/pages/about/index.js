@@ -4,7 +4,7 @@ import {
 } from './actions';
 
 const mapStateToProps = (state) => {
-    let localState = state.about;
+    let _state = state.about;
     return {
     }
 }

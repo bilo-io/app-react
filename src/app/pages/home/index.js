@@ -8,9 +8,9 @@ import {
 } from './actions';
 
 const mapStateToProps = (state) => {
-    let localState = state.home;
+    let _state = state.home;
     return {
-        query: localState.query
+        query: _state.query
     }
 }
 

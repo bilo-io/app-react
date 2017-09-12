@@ -6,10 +6,10 @@ import {
 } from './actions';
 
 const mapStateToProps = (state, ownProps) => {
-    let localState = state.demo;
+    let _state = state.demo;
     return {
-        text: localState.text,
-        items: localState.items
+        text: _state.text,
+        items: _state.items
     }
 }
 

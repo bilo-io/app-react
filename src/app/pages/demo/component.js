@@ -12,8 +12,8 @@ export const Demo = (props) => {
             <button onClick={() => props.saveText(props.text)}>Save</button>
             <div style={{display: 'flex', flexDirection: 'column'}}>
                 {
-                    (props.items || []).map((item) => {
-                        return <div>{item}</div>
+                    (props.items || []).map((item, idx) => {
+                        return <div key={idx}>{item}</div>
                     })
                 }
             </div>    

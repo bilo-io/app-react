@@ -5,8 +5,9 @@ import {
 } from './actions';
 
 const mapStateToProps = (state, ownProps) => {
+    let _state = state.sidenav;
     return {
-        isOpen: state.isOpen
+        isOpen: _state.isOpen
     }
 }
 

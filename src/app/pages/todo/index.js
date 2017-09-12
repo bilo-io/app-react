@@ -5,7 +5,7 @@ import {
 } from './actions';
 
 const mapStateToProps = (state) => {
-    let localState = state.todo;
+    let _state = state.todo;
     return {
     }
 }
