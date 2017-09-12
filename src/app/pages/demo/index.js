@@ -6,9 +6,10 @@ import {
 } from './actions';
 
 const mapStateToProps = (state, ownProps) => {
+    let localState = state.demo;
     return {
-        text: state.text,
-        items: state.items
+        text: localState.text,
+        items: localState.items
     }
 }
 

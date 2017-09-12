@@ -12,7 +12,6 @@ const initialState = {
 }
 
 const demoReducer = (state = initialState, { type, ...action }) => {
-    console.log('Text:',action);
     switch (type) {
         case UPDATE_TEXT:
             return {
@@ -22,7 +21,7 @@ const demoReducer = (state = initialState, { type, ...action }) => {
         case SAVE_TEXT:
             return {
                 ...state,
-                items: [...state.items, text],
+                items: [...state.items, action.payload],
                 text: ''
             }
         default: return state;

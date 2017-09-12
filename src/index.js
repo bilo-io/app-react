@@ -1,10 +1,10 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './app';
 import store from './app/store';
 import {BrowserRouter as Router} from 'react-router-dom';
+import './favicon.ico'
 
 ReactDOM.render(
     <Provider store={store}>

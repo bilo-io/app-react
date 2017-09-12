@@ -5,7 +5,7 @@ const todoReducer = (state = [], action) => {
                 ...state,
                 {
                     id: action.id,
-                    text: action.text,
+                    text: action.payload,
                     completed: false
                 }
             ]
