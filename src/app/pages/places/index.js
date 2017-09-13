@@ -1,21 +1,25 @@
 import { connect } from 'react-redux';
 import Places from './component';
+
 import {
+    searchPlaces,
     searchGoogle,
     selectResult,
     searchGoogleSuccess
 } from './actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     let _state = state.places;
     return {
-        query: _state.query
+        query: _state.query,
+        results: _state.results,
+        error: _state.error
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        fetchPlaces: (query) => dispatch(fetchPlaces(query)),
+        searchPlaces: (query) => dispatch(searchPlaces(query)),
         searchGoogle: (query) => dispatch(searchGoogle(query)),
         selectResult: (result) => dispatch(selectResult(result)),
         searchGoogleSucces: (results) => dispatch(searchGoogleSuccess(results))

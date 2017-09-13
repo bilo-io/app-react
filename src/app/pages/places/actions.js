@@ -12,10 +12,10 @@ export const searchGoogleError = (error) => {
 }
 
 export const searchGoogleSuccess = (json) => {
+    console.log({json})
     return {
-        type: RECEIVE_POSTS,
-        subreddit,
-        results: json.data,
+        type: SEARCH_GOOGLE_SUCCESS,
+        results: json.results,
         receivedAt: Date.now()
     }
 }
@@ -23,13 +23,17 @@ export const searchGoogleSuccess = (json) => {
 export const searchGoogle = (query) => {
     return {type: SEARCH_GOOGLE, query}
 }
-export const fetchPlaces = (query) => {
+export const searchPlaces = (query) => {
     return (dispatch) => {
         dispatch(searchGoogle(query))
-        return fetch(`https://www.reddit.com/r/${subreddit}`)
+        return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}`)
             .then(response => response.json(), error => console.log('An error occured.', { error }))
             .then(json => {
-            dispatch(receivePosts(subreddit, json))
+            dispatch(searchGoogleSuccess(json))
         })
     }
+    // return {
+    //     type: SEARCH_GOOGLE,
+    //     query
+    // }
 }
