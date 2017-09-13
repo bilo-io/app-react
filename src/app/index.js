@@ -7,11 +7,10 @@ import Navbar from './components/navbar';
 import Sidenav from './containers/sidenav/component';
 import {toggleSidenav} from './containers/sidenav/actions'
 // Pages
-import Async from './pages/async';
 import About from './pages/about';
 import Demo from './pages/demo';
 import Home from './pages/home';
-import Todo from './pages/todo';
+import Elastic from './pages/elastic';
 import Places from './pages/places';
 import NotFound from './pages/not-found';
 
@@ -24,25 +23,25 @@ export class App extends React.Component {
         this.setState({
             sidenav: {
                 isOpen: false,
-                items: [
+                pages: [
                     {
                         link: '/async',
-                        text: 'Async'
+                        name: 'Async'
                     }, {
                         link: '/about',
-                        text: 'About'
+                        name: 'About'
                     }, {
                         link: '/home',
-                        text: 'Home'
+                        name: 'Home'
                     }, {
                         link: '/demo',
-                        text: 'Demo'
+                        name: 'Demo'
                     }, {
-                        link: '/todo',
-                        text: 'Todo'
+                        link: '/elastic',
+                        name: 'Elastic'
                     }, {
                         link: '/places',
-                        text: 'Places'
+                        name: 'Places'
                     }
                 ]
             }
@@ -70,23 +69,22 @@ export class App extends React.Component {
                                 isOpen={this.state.sidenav.isOpen}
                                 items={this.state.sidenav.items}
                                 toggleSidenav={this.toggleSidenav.bind(this)}>
-                                {(this.state.sidenav.items).map((item) => {
+                                {(this.state.sidenav.pages).map((page) => {
                                     return <Link
-                                        key={item.link}
+                                        key={page.link}
                                         className='sidenav-link'
-                                        to={item.link}
+                                        to={page.link}
                                         onClick={() => this.toggleSidenav()}>
-                                        {item.text}
+                                        {page.name}
                                     </Link>
                                 })}
                             </Sidenav>
                             <Switch>
-                                <Route exact path="/" component={Home}/>
-                                <Route exact path="/async" component={Async}/>
+                                <Route exact path="/" component={Home}/>                                
                                 <Route exact path="/about" component={About} />
                                 <Route exact path="/home" component={Home}/>
                                 <Route exact path="/demo" component={Demo}/>
-                                <Route exact path="/todo" component={Todo} />
+                                <Route exact path="/elastic" component={Elastic} />
                                 <Route exact path="/places" component={Places}/>
                                 <Route path="*" component={NotFound}/>
                             </Switch>
