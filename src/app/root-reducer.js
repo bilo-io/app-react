@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 // Pages
+import asyncReducer from './pages/async/reducer';
 import homeReducer from './pages/home/reducer';
 import demoReducer from './pages/demo/reducer';
 import todoReducer from './pages/todo/reducer';
@@ -7,9 +8,12 @@ import todoReducer from './pages/todo/reducer';
 import sidenavReducer from './containers/sidenav/reducer';
 
 const rootReducer = combineReducers({
+    // Pages
+    async: asyncReducer,
+    demo: demoReducer,
     home: homeReducer,
     todo: todoReducer,
-    demo: demoReducer,
+    // Containers
     sidenav: sidenavReducer
 });
 

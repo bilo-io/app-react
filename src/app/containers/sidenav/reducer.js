@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const sidenavReducer = (state = initialState, { type, ...action }) => {
+    console.log({ action });
     switch (type) {
         case SIDENAV_TOGGLE:
             return {
