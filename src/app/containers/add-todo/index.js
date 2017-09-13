@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect, dispatch } from 'react-redux'
+import { dispatch } from 'react-redux'
 import { addTodo } from '../../pages/todo/actions'
 
 let AddTodo = (props) => {

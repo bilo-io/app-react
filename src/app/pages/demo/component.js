@@ -2,7 +2,6 @@ import React from 'react';
 require('./style.scss');
 
 export const Demo = (props) => {
-    console.log('Demo props:', { props });
     return (
         <div className='page'>
             <h1>Demo</h1>

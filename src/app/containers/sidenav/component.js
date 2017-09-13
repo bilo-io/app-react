@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 require('./style.scss');
 
 export const Sidenav = (props) => {
-    console.log('SideNav:', { props })
     return props.isOpen    
         ? (
             <div

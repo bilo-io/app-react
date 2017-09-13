@@ -12,6 +12,7 @@ import About from './pages/about';
 import Demo from './pages/demo';
 import Home from './pages/home';
 import Todo from './pages/todo';
+import Places from './pages/places';
 import NotFound from './pages/not-found';
 
 require('../app.scss');
@@ -27,8 +28,7 @@ export class App extends React.Component {
                     {
                         link: '/async',
                         text: 'Async'
-                    },
-                    {
+                    }, {
                         link: '/about',
                         text: 'About'
                     }, {
@@ -40,18 +40,18 @@ export class App extends React.Component {
                     }, {
                         link: '/todo',
                         text: 'Todo'
+                    }, {
+                        link: '/places',
+                        text: 'Places'
                     }
                 ]
             }
-        }, () => console.log('App:', this.state))
+        }, () => console.log('App.state:', this.state))
     }
     render() {
         let sidenav = this.state.sidenav;
         let isOpen = this.state.sidenav.isOpen;
         let items = this.state.sidenav.items;
-        console.log({ sidenav });
-        console.log({ items });
-        console.log({ isOpen });
         return this.state
             ? (
                 <Router>
@@ -86,7 +86,8 @@ export class App extends React.Component {
                                 <Route exact path="/about" component={About} />
                                 <Route exact path="/home" component={Home}/>
                                 <Route exact path="/demo" component={Demo}/>
-                                <Route exact path="/todo" component={Todo}/>
+                                <Route exact path="/todo" component={Todo} />
+                                <Route exact path="/places" component={Places}/>
                                 <Route path="*" component={NotFound}/>
                             </Switch>
                         </div>
@@ -103,7 +104,6 @@ export class App extends React.Component {
                 isOpen: !this.state.sidenav.isOpen
             }
         })
-        // }, console.log(this.state.sidenav));
     }
 }
 

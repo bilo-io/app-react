@@ -13,8 +13,5 @@ const store = createStore(
     )
 );
 
-store.dispatch(selectSubreddit('reactjs'));
-store.dispatch(fetchPosts('reactjs')).then(() => console.log(store.getState()));
-
 export default store;
 

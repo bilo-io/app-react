@@ -4,6 +4,7 @@ import asyncReducer from './pages/async/reducer';
 import homeReducer from './pages/home/reducer';
 import demoReducer from './pages/demo/reducer';
 import todoReducer from './pages/todo/reducer';
+import placesReducer from './pages/places/reducer';
 // Containers
 import sidenavReducer from './containers/sidenav/reducer';
 
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     demo: demoReducer,
     home: homeReducer,
     todo: todoReducer,
+    places: placesReducer,
     // Containers
     sidenav: sidenavReducer
 });
