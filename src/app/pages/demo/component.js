@@ -12,7 +12,7 @@ export const Demo = (props) => {
             <div style={{display: 'flex', flexDirection: 'column'}}>
                 {
                     (props.items || []).map((item, idx) => {
-                        return <div key={idx}>{item}</div>
+                        return <div className='item' key={idx}>{item}</div>
                     })
                 }
             </div>    
