@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import Places from './component';
 
 import {
+    updateQuery,
     searchPlaces,
-    searchGoogle,
+    searchES,
+    searchElastic,
     selectResult,
-    searchGoogleSuccess
+    searchESSuccess
 } from './actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,10 +21,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        searchPlaces: (query) => dispatch(searchPlaces(query)),
-        searchGoogle: (query) => dispatch(searchGoogle(query)),
+        searchElastic: (query) => dispatch(searchElastic(query)),
+        updateQuery: (query) => dispatch(updateQuery(query)),
+        searchES: (query) => dispatch(searchES(query)),
         selectResult: (result) => dispatch(selectResult(result)),
-        searchGoogleSucces: (results) => dispatch(searchGoogleSuccess(results))
+        searchESSuccess: (results) => dispatch(searchESSuccess(results))
     }
 }
 

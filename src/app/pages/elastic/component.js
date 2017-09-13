@@ -6,10 +6,17 @@ export const Places = (props) => {
     return (
         <div className='page'>
             <h1>Elastic</h1>
-            <input
-                onChange={(e) => {
-                props.searchPlaces(e.target.value)
-                }} />
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+                <input
+                    style={{padding: '0.75em'}}    
+                    onChange={(e) => {
+                    props.updateQuery(e.target.value)
+                    }} />
+                <button onClick={() => props.searchPlaces(props.query)}>
+                    Search
+                </button>
+            </div>    
+
             <div style={{ display: 'flex', flexDirection: 'row'}}>
                 {
                     props.results.map((result, idx) => {
