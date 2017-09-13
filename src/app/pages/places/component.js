@@ -9,7 +9,14 @@ export const Places = (props) => {
             <input
                 onChange={(e) => {
                 props.searchPlaces(e.target.value)
-            }}/>
+                }} />
+            <div style={{ display: 'flex', flexDirection: 'row'}}>
+                {
+                    props.results.map((result, idx) => {
+                        return <div key={idx}>{result.formatted_address}</div>
+                    })
+                }
+            </div>
         </div>
     )
 }

@@ -26,14 +26,12 @@ export const searchGoogle = (query) => {
 export const searchPlaces = (query) => {
     return (dispatch) => {
         dispatch(searchGoogle(query))
-        return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}`)
-            .then(response => response.json(), error => console.log('An error occured.', { error }))
-            .then(json => {
-            dispatch(searchGoogleSuccess(json))
-        })
+        if (query && query.length > 0) {
+            return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}`)
+                .then(response => response.json(), error => console.log('An error occured.', { error }))
+                .then(json => {
+                    dispatch(searchGoogleSuccess(json))
+                })
+        }
     }
-    // return {
-    //     type: SEARCH_GOOGLE,
-    //     query
-    // }
 }
