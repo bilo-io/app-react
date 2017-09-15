@@ -18,9 +18,11 @@ import NotFound from './pages/not-found';
 require('../app.scss');
 
 export class App extends React.Component {
-    componentWillMount() {}
+    constructor(props) {
+        super(props)
+    }
     render() {
-        let items = [
+        let pages = [
             {
                 link: '/about',
                 name: 'About'
@@ -52,12 +54,12 @@ export class App extends React.Component {
                     </Navbar>
                     <div className='app-content'>
                         <Sidenav>
-                            {items.map((page) => {
+                            {pages.map((page) => {
                                 return <Link
                                     key={page.link}
-                                    className='sidenav-link'
                                     to={page.link}
-                                    onClick={() => store.dispatch(toggleSidenav)}>
+                                    className='sidenav-link'
+                                    onClick={() => store.dispatch(toggleSidenav())}>
                                     {page.name}
                                 </Link>
                             })}
