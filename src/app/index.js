@@ -19,7 +19,6 @@ require('../app.scss');
 export class App extends React.Component {
     componentWillMount() {
         this.toggleSidenav = this.toggleSidenav.bind(this);
-        
         this.setState({
             sidenav: {
                 isOpen: false,

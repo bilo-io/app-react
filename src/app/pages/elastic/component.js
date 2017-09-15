@@ -12,10 +12,15 @@ export const Places = (props) => {
                     onChange={(e) => {
                     props.updateQuery(e.target.value)
                     }} />
-                <button onClick={() => props.searchPlaces(props.query)}>
+                <button onClick={() => props.searchElastic(props.query)}>
                     Search
                 </button>
             </div>    
+            <button
+                onClick={() => {
+                    props.pingES()
+                    }}
+                style={{ float: 'right' }}>ping ES</button>
 
             <div style={{ display: 'flex', flexDirection: 'row'}}>
                 {

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import Places from './component';
 
 import {
+    pingES,
+    pingClient,
     updateQuery,
     searchPlaces,
     searchES,
@@ -21,6 +23,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        pingES: () => dispatch(pingES()),
         searchElastic: (query) => dispatch(searchElastic(query)),
         updateQuery: (query) => dispatch(updateQuery(query)),
         searchES: (query) => dispatch(searchES(query)),

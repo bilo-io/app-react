@@ -1,11 +1,39 @@
+import elasticsearch from 'elasticsearch';
+var client = new elasticsearch.Client({host: 'localhost:9200', log: 'trace'});
+// Action Types
+export const PING_CLIENT = 'PING_CLIENT';
+export const PING_CLIENT_SUCCESS = 'PING_CLIENT_SUCCESS';
+export const PING_CLIENT_ERROR = 'PING_CLIENT_ERROR';
+//
 export const SEARCH_ES = 'SEARCH_ES';
 export const UPDATE_QUERY = 'UPDATE_QUERY';
 export const SEARCH_ES_SUCCESS = 'SEARCH_ES_SUCCESS';
 export const SEARCH_ES_ERROR = 'SEARCH_ES_ERROR';
 export const SELECT_RESULT = 'SELECT_RESULT';
-
+// Action Creators
+export const pingES = () => {
+    return (dispatch) => {
+        dispatch(pingClient())
+        return client.ping({
+            requestTimeout: 10000
+        }, (error) => {
+            error
+                ? dispatch(pingClientError())
+                : dispatch(pingClientSuccess())
+        })
+    }
+}
+export const pingClient = () => {
+    return {type: PING_CLIENT, pinging: true}
+}
+export const pingClientSuccess = () => {
+    return {type: PING_CLIENT_SUCCESS, pinging: false}
+}
+export const pingClientError = () => {
+    return {type: PING_CLIENT_ERROR, pinging: false}
+}
 export const updateQuery = (query) => {
-    return { type: UPDATE_QUERY, query}
+    return {type: UPDATE_QUERY, query}
 }
 
 export const selectResult = (query) => {
@@ -32,10 +60,12 @@ export const searchElastic = (query) => {
     return (dispatch) => {
         dispatch(searchES(query))
         if (query && query.length > 0) {
-            return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}`)
-                .then(response => response.json(), error => console.log('An error occured.', { error }))
-                .then(json => {
-                    dispatch(searchESSuccess(json))
+            return client
+                .search({q: query})
+                .then((body) => {
+                    dispatch(searchESSuccess(body.hits.hits))
+                }, (error) => {
+                    console.log('An error occured')
                 })
         }
     }
