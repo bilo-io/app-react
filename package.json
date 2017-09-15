@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --port 8080",
-    "start" : "node ./artifact/server.js",
+    "start": "node ./artifact/server.js",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "leaflet": "^1.2.0",
     "node-sass": "^4.5.3",
     "openlayers": "^4.3.1",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

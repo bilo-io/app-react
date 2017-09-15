@@ -1,8 +1,7 @@
-export const SIDENAV_TOGGLE = 'SIDENAV_TOGGLE';
+export const TOGGLE_SIDENAV = 'TOGGLE_SIDENAV';
 
-export const toggleSidenav = (isOpen) => {
+export const toggleSidenav = () => {
     return {
-        type: SIDENAV_TOGGLE,
-        isOpen: !isOpen
+        type: TOGGLE_SIDENAV
     }
 }
